@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = 'fallou/fallou-3d-app'
+        DOCKER_IMAGE = 'DOCKER_IMAGE = 'sfallou1/fallou-3d-app''
         DOCKER_TAG = "${BUILD_NUMBER}"
     }
     stages {
