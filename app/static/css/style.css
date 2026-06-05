@@ -1,0 +1,11 @@
+:root { --bg: #0a0a0a; --text: #fff; --accent1: #ff6b6b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+canvas { position: fixed; top:0; left:0; z-index:-1; }
+.navbar { position: fixed; width:100%; padding:20px; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); text-align:center; }
+.hero { height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; flex-direction:column; }
+.glitch { font-size: 6rem; animation: glitch 0.5s infinite; }
+@keyframes glitch { 0% { text-shadow: -2px 0 red, 2px 0 blue; } 50% { text-shadow: 2px 0 red, -2px 0 blue; } 100% { text-shadow: -2px 0 red, 2px 0 blue; } }
+.passions { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:50px; position:relative; z-index:2; }
+.passion-card { background: rgba(255,255,255,0.1); border-radius: 20px; padding:20px; backdrop-filter: blur(5px); text-align:center; }
+.card-icon { font-size:3rem; }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fallou 3D</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    <nav class="navbar"><h1>✨ Fallou.dev</h1></nav>
+    <section class="hero">
+        <div>
+            <h1 class="glitch">Fallou</h1>
+            <p>DevOps Engineer | 3D Artist</p>
+            <div id="quote"></div>
+        </div>
+    </section>
+    <section class="passions">
+        {% for passion in passions %}
+        <div class="passion-card">
+            <div class="card-icon">{{ passion.icon }}</div>
+            <h3>{{ passion.name }}</h3>
+            <p>{{ passion.description }}</p>
+        </div>
+        {% endfor %}
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script>
+        async function updateQuote() {
+            const res = await fetch('/api/random-quote');
+            const data = await res.json();
+            document.getElementById('quote').innerHTML = data.quote;
+        }
+        setInterval(updateQuote, 10000);
+        updateQuote();
+    </script>
+</body>
+</html>
